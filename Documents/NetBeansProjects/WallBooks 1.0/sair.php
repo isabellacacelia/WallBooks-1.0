@@ -10,6 +10,6 @@ session_destroy();
 Obrigado pelo seu acesso 
 <br> 
 <br> 
-<a href="index.php">Formulário de autentificação</a> 
+<a href="index.php">Formulário de autentificação Teste</a> 
 </body> 
 </html>

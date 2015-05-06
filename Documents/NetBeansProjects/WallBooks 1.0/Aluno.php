@@ -7,18 +7,17 @@ include "conexao.php";
  */
 
 /**
- * Description of Professor
+ * Description of Aluno
  *
  * @author Projeto
  */
-class Professor extends Usuario {
-    //put your code here
-    private $nome, $cpf , $email, $dt_nascimento;
+class Aluno extends Usuario {
+   private $nome, $ra , $email, $dt_nascimento;
     private $rua, $numero, $bairro, $estado, $cidade, $genero, $id_instituicao;
     
-    function __construct($nome, $cpf, $email, $dt_nascimento, $rua, $numero, $bairro, $estado, $cidade, $genero, $id_instituicao) {
+    function __construct($nome, $ra, $email, $dt_nascimento, $rua, $numero, $bairro, $estado, $cidade, $genero, $id_instituicao) {
         $this->nome = $nome;
-        $this->cpf = $cpf;
+        $this->ra = $ra;
         $this->email = $email;
         $this->dt_nascimento = $dt_nascimento;
         $this->rua = $rua;
@@ -35,7 +34,7 @@ class Professor extends Usuario {
     }
 
     function getCpf() {
-        return $this->cpf;
+        return $this->ra;
     }
 
     function getSenha() {
@@ -83,7 +82,7 @@ class Professor extends Usuario {
     }
 
     function setCpf($cpf) {
-        $this->cpf = $cpf;
+        $this->ra = $cpf;
     }
 
     function setSenha($senha) {
@@ -126,14 +125,14 @@ class Professor extends Usuario {
         $this->id_instituicao = $id_instituicao;
     }
     
-    function cadastraProfessor($obj){
+    function cadastraAluno($obj){
         conecta();
-        $query_select = "SELECT * FROM usuario WHERE cpf = '".$obj->cpf."' and email = '".$obj->email."'";
+        $query_select = "SELECT * FROM usuario WHERE ra = '".$obj->ra."' and email = '".$obj->email."'";
         $select = mysql_query($query_select,$conecta);
         $array = mysql_query($select);
         
-        if($array["cpf"] != null ||$array["cpf"] != "" ){
-           $query = "INSERT INTO usuario (login,senha,data_nascimento,sexo,endereco,cpf )VALUES ('".$obj->email."','".$obj->senha."' , '".$obj->dt_nascimento."','".$obj->genero."','".$obj->rua." ".$obj->numero." ".$obj->bairro." ".$obj->cidade."-".$obj->estado."','".$obj->cpf."')"; 
+        if($array["ra"] != null ||$array["ra"] != "" ){
+           $query = "INSERT INTO usuario (login,senha,data_nascimento,sexo,endereco,ra, aluno )VALUES ('".$obj->email."','".$obj->senha."' , '".$obj->dt_nascimento."','".$obj->genero."','".$obj->rua." ".$obj->numero." ".$obj->bairro." ".$obj->cidade."-".$obj->estado."','".$obj->ra."', 'true')"; 
            $insert = mysql_query($query,$conecta); 
            if($insert){
            return true;
@@ -146,6 +145,5 @@ class Professor extends Usuario {
         
         
     }
-
-
+    
 }

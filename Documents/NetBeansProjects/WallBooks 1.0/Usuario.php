@@ -16,6 +16,11 @@ class Usuario {
     //put your code here
    private $usuario = "";
    private $senha = "";
+   function __construct($usuario, $senha) {
+       $this->usuario = $usuario;
+       $this->senha = $senha;
+   }
+
     function setUsuario($usuario){
         $this->usuario = $usuario;
     }
@@ -24,15 +29,18 @@ class Usuario {
     }
     
     
-    function verificaLogin(){
-        
-        if(true){
+    function verificaLogin($obj){
+       conecta();
+       $query_select = "SELECT email FROM usuario WHERE email = '".$obj->usuario."' and senha='".$obj->senha."'";
+       $select = mysql_query($query_select,$conecta);
+       $array = mysql_fetch_array($select);
+        if($array['email'] != null || $array['email'] != "" ){
             
-        return ;
+        return true;
          
         }else{
             
-        return "<script>alert('Login e/ou Senha incorretos');window.location.href='login.html';</script>" ;
+        return false ;
          
         }
     

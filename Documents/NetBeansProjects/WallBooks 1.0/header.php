@@ -21,6 +21,7 @@
                             <div class="logo"><img src="img/WallBooks.jpg" class="logo-img"/></div>
                             <li><a href="areaAdmin.php?pagina=nav/inicio">Início</a></li>
                             <li><a href="areaAdmin.php?pagina=nav/instituicao">Instituição</a></li>
+                            <li><a href="areaAdmin.php?pagina=nav/licenca">Licença</a></li>
                             <!--<li><a href="areaAdmin.php?pagina=nav/material">Material</a></li>-->
 
                             <li class="no-padding">
@@ -31,9 +32,6 @@
                                             <ul>
                                                 <li><a href="areaAdmin.php?pagina=nav/material">Cadastrar Material</a></li>
                                             </ul>
-                                            <ul>
-                                                <li><a href="areaAdmin.php?pagina=nav/licenca">Licença</a></li>
-                                            </ul>
                                         </div>
                                     </li>
                                 </ul>
@@ -41,10 +39,10 @@
                             <li class="no-padding">
                                 <ul class="collapsible collapsible-accordion">
                                     <li>
-                                        <a class="collapsible-header">Aluno</a>
+                                        <a class="collapsible-header">Usuário</a>
                                         <div class="collapsible-body">
                                             <ul>
-                                                <li><a href="areaAdmin.php?pagina=nav/aluno">Cadastrar Aluno</a></li>
+                                                <li><a href="areaAdmin.php?pagina=nav/usuario">Cadastrar Usuário</a></li>
                                             </ul>
                                             <ul>
                                                 <li><a href="areaAdmin.php?pagina=nav/turma">Cadastrar Turma</a></li>
@@ -54,8 +52,6 @@
                                 </ul>
                             </li>
 
-
-                            <li><a href="areaAdmin.php?pagina=nav/professor">Professor</a></li>
                             <li><a href="areaAdmin.php?pagina=nav/editora">Editora</a></li>
                             <li><a href="areaAdmin.php?pagina=nav/historico">Histórico de Alteração</a></li>
                             <li><a href="areaAdmin.php">Sair</a></li>

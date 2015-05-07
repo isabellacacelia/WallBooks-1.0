@@ -32,6 +32,9 @@
                                             <ul>
                                                 <li><a href="areaAdmin.php?pagina=nav/material">Cadastrar Material</a></li>
                                             </ul>
+                                            <ul>
+                                                <li><a href="areaAdmin.php?pagina=nav/consultarMaterial">Consultar Material</a></li>
+                                            </ul>
                                         </div>
                                     </li>
                                 </ul>
@@ -43,6 +46,9 @@
                                         <div class="collapsible-body">
                                             <ul>
                                                 <li><a href="areaAdmin.php?pagina=nav/usuario">Cadastrar Usuário</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li><a href="areaAdmin.php?pagina=nav/consultarUsuario">Consultar Usuário</a></li>
                                             </ul>
                                             <ul>
                                                 <li><a href="areaAdmin.php?pagina=nav/turma">Cadastrar Turma</a></li>

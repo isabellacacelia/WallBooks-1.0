@@ -46,7 +46,7 @@ class Turma {
         $this->alunos = $alunos;
     }
 
-     function cadastraEditora($obj){
+     function cadastraTurma($obj){
          conecta();
         $query_select = "SELECT * FROM turma WHERE nome = '".$obj->nome."'";
         $select = mysql_query($query_select,$conecta);

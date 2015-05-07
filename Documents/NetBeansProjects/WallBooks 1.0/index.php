@@ -46,12 +46,9 @@
                         </div>	
 
                         <div class="modal-footer">
-                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " type="submit">
-                                Sair
-                            </a>
-                            <a href="areaAdmin.php?pagina=nav/inicio" class="modal-action modal-close waves-effect waves-green btn-flat" type="submit">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">
                                 Entrar
-                            </a>
+                            </button>
                         </div>
                     </form>    
                 </div>

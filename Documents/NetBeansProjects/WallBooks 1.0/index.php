@@ -33,7 +33,7 @@
             <div class="modal-content">
                 <h4>Entrar no Wall Books</h4>
                 <div class="row">
-                    <form class="col s12" method="POST"><!--action="Login.php"-->
+                    <form class="col s12" method="POST" action="Login.php"><!--action="Login.php"-->
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" type="text" class="validate">

@@ -20,6 +20,8 @@ function CriaCookeis($array){
     
     
     setcookie('logado', true, time() + (86400 * 30), "/");
+    setcookie('adm',$array['ic_usuario_administrador'] , time() + (86400 * 30), "/");
+    setcookie('professor',$array['ic_usuario_professor'] , time() + (86400 * 30), "/");
     setcookie("id", $array['id'], time() + (86400 * 30), "/");
     setcookie("nome", $array['nome'], time() + (86400 * 30), "/");
     

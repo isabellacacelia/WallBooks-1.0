@@ -32,7 +32,7 @@ class Usuario {
     
     function verificaLogin($obj){
        conecta();
-       $query_select = "SELECT nome , id_usuario  FROM usuario WHERE email = '".$obj->usuario."' and senha = '".$obj->senha."'";
+       $query_select = "SELECT nome , id_usuario, ic_usuario_administrador, ic_usuario_professor  FROM usuario WHERE email = '".$obj->usuario."' and senha = '".$obj->senha."'";
        $select = mysql_query($query_select,$conecta);
        $array = mysql_fetch_array($select);
         if($array['nome'] != null || $array['nome'] != "" ){

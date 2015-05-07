@@ -9,7 +9,7 @@
     </head>
 
     <?php include"conexao.php"; ?>
-    
+
     <body>	
         <header>
             <nav>
@@ -33,7 +33,7 @@
             <div class="modal-content">
                 <h4>Entrar no Wall Books</h4>
                 <div class="row">
-                    <form class="col s12" method="POST" <!--action="Login.php"-->>
+                    <form class="col s12" method="POST"><!--action="Login.php"-->
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" type="text" class="validate">
@@ -44,15 +44,19 @@
                                 <label for="password">Senha</label>
                             </div>
                         </div>	
-                   
-                   
+
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " type="submit">
+                                Sair
+                            </a>
+                            <a href="areaAdmin.php?pagina=nav/inicio" class="modal-action modal-close waves-effect waves-green btn-flat" type="submit">
+                                Entrar
+                            </a>
+                        </div>
+                    </form>    
                 </div>
             </div>
 
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Sair</a>
-                <a href="areaAdmin.php?pagina=nav/inicio" class="modal-action modal-close waves-effect waves-green btn-flat ">Entrar</a>
-            </div>
         </div>
 
         <main>

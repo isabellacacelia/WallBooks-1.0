@@ -24,10 +24,8 @@
 			<div class="col s6">
 			<label >Status</label>
 			<div class="input-field alunoGenero">
-			<input name="grupoGenero" type="radio" id="fem" />
-			  <label for="fem">Disponível</label>&nbsp;
-			  <input class="radioPesq" name="grupoGenero" type="radio" id="masc" />
-			  <label for="masc">Indisponível</label>
+                            <input name="status" type="checkbox" id="disponivel" />
+			  <label for="disponivel">Disponível</label>
 			</div>
 			</div>
 			<div class="col s6"></div>

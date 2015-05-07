@@ -5,7 +5,7 @@ include "conexao.php";
 $login = $_POST['email'];
 $senha = $_POST['password'];
 
-$usuario = new $usuario($login,$senha);
+$usuario = new Usuario($login,$senha);
 
  $result = $usuario->verificaLogin($usuario);
 if($result!=false){

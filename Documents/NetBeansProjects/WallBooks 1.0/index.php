@@ -8,7 +8,9 @@
         <title> Wall Book - Sua Plataforma Digital</title>
     </head>
 
-    <?php include"conexao.php"; ?>
+    <?php include"conexao.php"; 
+    $conectar = conecta();
+    ?>
 
     <body>	
         <header>
@@ -36,11 +38,11 @@
                     <form class="col s12" method="POST" action="Login.php"><!--action="Login.php"-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="email" type="text" class="validate">
+                                <input id="email" name="email" type="text" class="validate">
                                 <label for="email">Login</label>
                             </div>
                             <div class="input-field col s12">
-                                <input id="password" type="password" class="validate">
+                                <input id="password" name="password" type="password" class="validate">
                                 <label for="password">Senha</label>
                             </div>
                         </div>	

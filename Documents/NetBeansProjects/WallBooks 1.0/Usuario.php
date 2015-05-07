@@ -16,6 +16,7 @@ class Usuario {
     //put your code here
    private $usuario = "";
    private $senha = "";
+   
    function __construct($usuario, $senha) {
        $this->usuario = $usuario;
        $this->senha = $senha;
@@ -31,16 +32,16 @@ class Usuario {
     
     function verificaLogin($obj){
        conecta();
-       $query_select = "SELECT email FROM usuario WHERE email = '".$obj->usuario."' and senha='".$obj->senha."'";
+       $query_select = "SELECT nome , id_usuario  FROM usuario WHERE email = '".$obj->usuario."' and senha = '".$obj->senha."'";
        $select = mysql_query($query_select,$conecta);
        $array = mysql_fetch_array($select);
-        if($array['email'] != null || $array['email'] != "" ){
+        if($array['nome'] != null || $array['nome'] != "" ){
             
-        return true;
+        return  $array;
          
         }else{
             
-        return false ;
+        return  false;
          
         }
     

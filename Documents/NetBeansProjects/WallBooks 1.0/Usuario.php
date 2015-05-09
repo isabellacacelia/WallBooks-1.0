@@ -36,22 +36,30 @@ class Usuario {
        $conectar = conecta();
        $query_select = "SELECT nome_usuario , codigo_usuario, ic_usuario_administrador, ic_usuario_professor  FROM USUARIO WHERE login_usuario = '".$obj->usuario."' and senha_usuario = '".$obj->senha."'";
        $select = mysql_query($query_select,$conectar);
-       if($select === FALSE){
+       if(mysql_num_rows($select) == 0 || mysql_num_rows($select) == null){
            desconecta($conectar);
            return  false;
        }else{
           
-        // while($row = mysql_fetch_row($select)){
-          $row = mysql_fetch_assoc($select);   
-             CriaCookeis($row);
-            //if($array['codigo_usuario'] != null || $array['codigo_usuario'] != "" ){
-            return  $row;
-            //desconecta($conectar);
-        // }
+        while($row = mysql_fetch_array($select)){
+         // $row = mysql_fetch_assoc($select);   
+         $nome = $row['nome_usuario'];   
+         $ic_admin = $row['ic_usuario_administrador']; 
+         $ic_professor = $row['ic_usuario_professor'];
+         $id = $row['codigo_usuario'];
+          CriaCookeis($nome,$ic_admin,$ic_professor,$id);
+        }               
+        desconecta($conectar);
+           
+        return  true;
+           
              
         }
-       }
+
         
+       
+    }
+      
     
     
     

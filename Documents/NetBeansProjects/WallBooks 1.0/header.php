@@ -19,7 +19,12 @@
                     <div class="container">
                         <div id="topo" class="brand-logo center"></div>
                         <ul id="slide-out" class="side-nav fixed">
-                            <div class="logo"><img src="img/WallBooks.jpg" class="logo-img"/></div>
+                            <div class="logo"><img src="img/WallBooks.jpg" class="logo-img"/>
+                           <li><a href=""><?php 
+                           if(isset($_COOKIE['logado'])){
+                           echo $_COOKIE['nome'];
+                           }?></a></li>
+                            </div>
                             <li><a href="areaAdmin.php?pagina=nav/inicio">Início</a></li>
                             <li><a href="areaAdmin.php?pagina=nav/instituicao">Instituição</a></li>
                             <li><a href="areaAdmin.php?pagina=nav/licenca">Licença</a></li>

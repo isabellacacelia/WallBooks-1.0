@@ -8,7 +8,7 @@
  */
  function VerificaCookeis(){
     
-    if($_COOKIE['logado'] != true ){
+    if(!isset($_COOKIE['logado']) || $_COOKIE['logado'] == false){
         
         echo "<script>alert('É necessário efetuar o login');"
         . "window.location='index.php';</script>";
@@ -17,20 +17,22 @@
 }
 
 
-function CriaCookeis($result){
+function CriaCookeis($nome,$ic_admin,$ic_professor,$id){
      
     setcookie('logado', true, time() + (86400 * 30), "/");
-    setcookie('adm', $result['ic_usuario_administrador'] , time() + (86400 * 30), "/");
-    setcookie('professor',$result['ic_usuario_professor'] , time() + (86400 * 30), "/");
-    setcookie("id", $result['codigo_usuario'], time() + (86400 * 30), "/");
-    setcookie("nome", $result['nome_usuario'], time() + (86400 * 30), "/");
+    setcookie('adm', $ic_admin , time() + (86400 * 30), "/");
+    setcookie('professor',$ic_professor , time() + (86400 * 30), "/");
+    setcookie("id", $id, time() + (86400 * 30), "/");
+    setcookie("nome", $nome, time() + (86400 * 30), "/");
    // desconecta($conecta); 
 }
 function DestroiCookeis(){
     
-    setcookie("id", "", time() - 1000000000000000000000000);
-    setcookie("nome", "", time() - 1000000000000000000000000);
-    setcookie("logado", "", time() - 1000000000000000000000000);
-    
+    setcookie("id", "", time() - (86400 * 60),"/");
+    setcookie("nome", "", time() - (86400 * 60),"/");
+    setcookie("logado", false, time() - (86400 * 60),"/");
+    setcookie('adm', "", time() - (86400 * 30), "/");
+    setcookie('professor',"" , time() - (86400 * 30), "/");
+   
 }
 ?>

@@ -7,7 +7,7 @@
     <div class="container"> 
         <br/>
         <div class="row">
-            <form class="col s12">
+            <form class="col s12" action="cadastraProfessor.php" method="POST">
 
                 <div class="row">
                     <div class="input-field col s6">

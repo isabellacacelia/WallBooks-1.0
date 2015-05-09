@@ -8,8 +8,8 @@
         <title> Wall Book - Sua Plataforma Digital</title>
     </head>
 
-    <?php include"conexao.php"; 
-    $conectar = conecta();
+    <?php include"Cookeis.php"; 
+          DestroiCookeis();
     ?>
 
     <body>	

@@ -4,7 +4,8 @@
         <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <?php
+        <?php include  'Cookeis.php';
+        VerificaCookeis();
         $titulo['pagina'] = explode('/', $_GET['pagina']);
         $titulo['pagina'] = end($titulo['pagina']);
         ?>
@@ -60,7 +61,12 @@
 
                             <li><a href="areaAdmin.php?pagina=nav/editora">Editora</a></li>
                             <li><a href="areaAdmin.php?pagina=nav/historico">Histórico de Alteração</a></li>
-                            <li><a href="areaAdmin.php">Sair</a></li>
+                         
+                            <li><a href='index.php'>Sair</a></li>
+                         
+                            <script>
+                            
+                            </script>
                         </ul>
 
                         <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>

@@ -1,5 +1,6 @@
 <?php
-
+include 'conexao.php';
+include 'Cookeis.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -33,18 +34,26 @@ class Usuario {
     function verificaLogin($obj){
       
        $conectar = conecta();
-       $query_select = "SELECT nome , id_usuario, ic_usuario_administrador, ic_usuario_professor  FROM usuario WHERE email = '".$obj->usuario."' and senha = '".$obj->senha."'";
+       $query_select = "SELECT nome_usuario , codigo_usuario, ic_usuario_administrador, ic_usuario_professor  FROM USUARIO WHERE login_usuario = '".$obj->usuario."' and senha_usuario = '".$obj->senha."'";
        $select = mysql_query($query_select,$conectar);
-       $array = mysql_fetch_array($select);
-        if($array['id_usuario'] != null || $array['id_usuario'] != "" ){
-            
-        return  $array;
-         
-        }else{
-            
-        return  false;
-         
+       if($select === FALSE){
+           desconecta($conectar);
+           return  false;
+       }else{
+          
+        // while($row = mysql_fetch_row($select)){
+          $row = mysql_fetch_assoc($select);   
+             CriaCookeis($row);
+            //if($array['codigo_usuario'] != null || $array['codigo_usuario'] != "" ){
+            return  $row;
+            //desconecta($conectar);
+        // }
+             
         }
-    
        }
+        
+    
+    
+    
+        
 }

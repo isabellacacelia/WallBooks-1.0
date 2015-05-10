@@ -14,20 +14,19 @@ include "conexao.php";
 class Professor extends Usuario {
     //put your code here
     private $nome, $cpf , $email, $dt_nascimento;
-    private $rua, $numero, $bairro, $estado, $cidade, $genero, $id_instituicao;
+    private $endereco,$genero, $id_instituicao,$login,$senha;
     
-    function __construct($nome, $cpf, $email, $dt_nascimento, $rua, $numero, $bairro, $estado, $cidade, $genero, $id_instituicao) {
+    function __construct($nome, $cpf, $email, $dt_nascimento, $endereco, $genero, $id_instituicao,$login,$senha) {
         $this->nome = $nome;
         $this->cpf = $cpf;
         $this->email = $email;
         $this->dt_nascimento = $dt_nascimento;
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->bairro = $bairro;
-        $this->estado = $estado;
-        $this->cidade = $cidade;
+        $this->endereco = $endereco;
         $this->genero = $genero;
         $this->id_instituicao = $id_instituicao;
+         $this->login = $login;
+        $this->senha = $senha;
+        
     }
 
     function getNome() {
@@ -97,27 +96,6 @@ class Professor extends Usuario {
     function setDt_nascimento($dt_nascimento) {
         $this->dt_nascimento = $dt_nascimento;
     }
-
-    function setRua($rua) {
-        $this->rua = $rua;
-    }
-
-    function setNumero($numero) {
-        $this->numero = $numero;
-    }
-
-    function setBairro($bairro) {
-        $this->bairro = $bairro;
-    }
-
-    function setEstado($estado) {
-        $this->estado = $estado;
-    }
-
-    function setCidade($cidade) {
-        $this->cidade = $cidade;
-    }
-
     function setGenero($genero) {
         $this->genero = $genero;
     }
@@ -127,13 +105,16 @@ class Professor extends Usuario {
     }
     
     function cadastraProfessor($obj){
-        conecta();
+        $conecta = conecta();
         $query_select = "SELECT * FROM usuario WHERE cpf = '".$obj->cpf."' and email = '".$obj->email."'";
         $select = mysql_query($query_select,$conecta);
-        $array = mysql_query($select);
+        //$array = mysql_query($select);
         
-        if($array["cpf"] != null ||$array["cpf"] != "" ){
-           $query = "INSERT INTO usuario (login,senha,data_nascimento,sexo,endereco,cpf )VALUES ('".$obj->email."','".$obj->senha."' , '".$obj->dt_nascimento."','".$obj->genero."','".$obj->rua." ".$obj->numero." ".$obj->bairro." ".$obj->cidade."-".$obj->estado."','".$obj->cpf."')"; 
+        if(mysql_num_rows($select) == 0 || mysql_num_rows($select) == null){
+           $query = "INSERT INTO usuario (ic_usuario_professor ,nome_usuario, email_usuario, login_usuario,senha_usuario,"
+                   . "data_nascimento_usuario, sexo_usuario, endereco_usuario, cpf_usuario)"
+                   . "VALUES ('true', '".$obj->nome."','".$obj->email."','".$obj->login."','".$obj->senha."' , '".$obj->dt_nascimento."','"
+                   .$obj->genero."','".$obj->endereco."','".$obj->cpf."')"; 
            $insert = mysql_query($query,$conecta); 
            if($insert){
            return true;

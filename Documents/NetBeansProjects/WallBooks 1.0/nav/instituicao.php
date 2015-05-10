@@ -5,28 +5,30 @@
 
 
 <main >
+    
     <div class="container" >
         <br/>
+        <form class="col s12" method='POST' action='cadInstituicao.php'>
         <div class="row">
-            <form class="col s12">
+            
                 <div class="row">
                     <div class="input-field col s6">
-                        <input placeholder="00.000.000/0000-00" id="cnpj" type="text" class="validate" maxlength="18">
+                        <input name='cnpj' placeholder="00.000.000/0000-00" id="cnpj" type="text" class="validate" maxlength="20">
                         <label for="cnpj">CNPJ</label>
                     </div>
                     <div class="input-field col s6">
-                        <input placeholder="Digite o nome da instituição" id="name" type="text" class="validate" maxlength="80">
+                        <input name='nome' placeholder="Digite o nome da instituição" id="name" type="text" class="validate" maxlength="80">
                         <label for="name">Nome</label>
                     </div>
                 </div>
-            </form>
+           
         </div>
         <div class="right-align">
             <button class="btn waves-effect waves-light" type="submit" name="action">ENVIAR
                 <i class="mdi-content-send right"></i>
             </button>
         </div>
-        
+         </form>
         <br/>
         
         <table class="bordered centered">

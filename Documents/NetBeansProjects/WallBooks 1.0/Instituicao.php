@@ -15,20 +15,14 @@ class Instituicao {
     //put your code here
     private $nome;
     private $cnpj;
-    private $numeroLicenca;
-    function __construct($nome, $cnpj, $numeroLicenca) {
+   
+    function __construct($nome, $cnpj) {
         $this->nome = $nome;
         $this->cnpj = $cnpj;
-        $this->numeroLicenca = $numeroLicenca;
+      
     }
 
-    function geNumeroLicenca(){
-        return $this->numeroLicenca;
-        
-    }
-    function setNumeroLicenca($numero){
-        $this->numeroLicenca = $numero;
-    }
+   
     function getNome() {
         return $this->nome;
     }
@@ -45,14 +39,15 @@ class Instituicao {
         $this->cnpj = $cnpj;
     }
     function cadastraInstituicao($obj){
-        conecta();
-        $query_select = "SELECT * FROM instituicao WHERE cnpj = '".$obj->cnpj."' and nome = '".$obj->nome."'";
-        $select = mysql_query($query_select,$conecta);
-        $array = mysql_query($select);
+        $conecta = conecta();
+        $query_select = "SELECT * FROM instituicao WHERE cnpj = '".$obj->cnpj."'";
+        $select = mysql_query($query_select,$conecta) or die(mysql_error());
         
-        if($array["cnpj"] != null ||$array["cnpj"] != "" ){
-           $query = "INSERT INTO instituicao (nome,cnpj)VALUES ('".$obj->nome."','".$obj->cnpj."'"; 
-           $insert = mysql_query($query,$conecta); 
+        
+        if(mysql_num_rows($select) == 0 || mysql_num_rows($select) == null){
+           $query = "INSERT INTO instituicao (nome,cnpj)VALUES ('"
+                   .$obj->nome."','".$obj->cnpj."'"; 
+           $insert = mysql_query($query,$conecta) or die(mysql_error()); 
            if($insert){
            return true;
            }else{

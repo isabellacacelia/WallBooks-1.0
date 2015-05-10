@@ -1,4 +1,6 @@
 <?php
+require_once("Usuario.php");
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,7 +29,7 @@ class Administrador extends Usuario {
     }
      function cadastraAdmin($obj){
        $conecta = conecta();
-          $query_select = "SELECT * FROM usuario WHERE cpf = '".$obj->cpf."' and email = '".$obj->email."'";
+          $query_select = "SELECT * FROM usuario WHERE cpf_usuario = '".$obj->cpf."' or email_usuario = '".$obj->email."' or login_usuario='".$obj->login."'";
         $select = mysql_query($query_select,$conecta);
        // $array = mysql_query($select);
         

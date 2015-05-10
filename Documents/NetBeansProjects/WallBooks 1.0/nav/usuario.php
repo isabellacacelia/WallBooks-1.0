@@ -4,11 +4,11 @@
 </script>
 
 <main>
-    <div class="container"> 
+     <form class="col s12" action='cadastra.php' method='POST'>
+        <div class="container"> 
         <br/>
         <div class="row">
-            <form class="col s12" action='cadastra.php' method='POST'>
-
+           
                 <div class="row">
                     <div class="input-field col s6">
                         <input placeholder="Nome do Usuário" name='nome' id="nome" type="text" class="validate">
@@ -36,7 +36,7 @@
                         <label for="senha">Senha</label>
                     </div>
                     <div class="input-field col s6">
-                        <input type="date" class="datepicker" name='data' placeholder="Escolha a data de nascimento" id="nascimento">
+                        <input type="date" class="datepicker" name='data'  placeholder="Escolha a data de nascimento" id="nascimento">
                         <label for="nascimento">Data de Nascimento</label>
                     </div>
                 </div>
@@ -54,8 +54,8 @@
 
                 <div class="row">
                     <div class="input-field col s6">
-                        <input placeholder="0000" id="email"  name='numero' type="email" class="validate">
-                        <label for="email">Número</label>
+                        <input placeholder="0000" id="email"  name='numero' type="text" class="validate">
+                        <label for="endereco">Número</label>
                     </div>
                     <div class="input-field col s6">
                         <input placeholder="Bairro Amarela" name ='bairro' id="endereco" type="text" class="validate">
@@ -65,7 +65,7 @@
 
                 <div class="row">
                     <div class="input-field col s6">
-                        <input placeholder="São Paulo" id="email" name='cidade' type="email" class="validate">
+                        <input placeholder="São Paulo" id="email" name='cidade' type="text" class="validate">
                         <label for="email">Cidade</label>
                     </div>
                     <div class="input-field col s6">
@@ -124,10 +124,11 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            
         </div>	
         <button class="btn waves-effect waves-light" type="submit" name="action">ENVIAR
             <i class="mdi-content-send right"></i>
         </button>
     </div>
+    </form>
 </main>

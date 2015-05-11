@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@import url("materialize.min.css");
+body{
+	height: 645px;
+	background: no-repeat;
+}
+.lgdCarrossel{
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.slider .indicators .indicator-item.active {
+	background-color: #80deea;
+}
+.btn{
+	background-color: #80deea;
+}
+.logo{
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+
+.logo-img{
+	width: 120px;
+	margin-bottom: -25px;
+}
+ header, main, footer {
+    padding-left: 240px;
+  }
+
+  @media only screen and (max-width : 992px) {
+    header, main, footer {
+      padding-left: 0;
+    }
+  }
+ 
+input[type="radio"]:checked+label:after{
+	background-color: #80deea;
+	border: #80deea;
+}
+.alunoGenero{
+	margin: 0 auto;
+} 
+th {
+	color: #80deea;
+}
+label.active {
+    font-size: 20px;
+    color: black;
+}
+footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+  } 
+  

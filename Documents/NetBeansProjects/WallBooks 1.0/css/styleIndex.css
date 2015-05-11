@@ -1,0 +1,24 @@
+@charset "UTF-8";
+@import url("materialize.min.css");
+
+.lgdCarrossel{
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.slider .indicators .indicator-item.active {
+	background-color: #80deea;
+}
+
+.logo{
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+
+.logo-img{
+	width: 120px;
+	margin-bottom: -25px;
+}
+
+footer {
+	margin-bottom: -22px;
+}
